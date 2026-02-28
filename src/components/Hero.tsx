@@ -26,12 +26,14 @@ export default function Hero() {
     }
   };
 
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; 
-    link.download = 'Rahul_Kure_Resume.pdf';
-    // link.click();
-  };
+ const downloadResume = () => {
+  const link = document.createElement('a');
+  link.href = '/Rahul_Kure_Resume.pdf';  // file name exact same as public folder
+  link.download = 'Rahul_Kure_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0a0a0a]">
